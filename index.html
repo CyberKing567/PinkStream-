@@ -1,29 +1,30 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>PinkStream</title>
-  <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="styles.css">
+  <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#ff0066"/>
 </head>
-<body data-theme="dark">
+<body>
   <header>
     <h1>PinkStream</h1>
-    <div id="userDisplay"></div>
   </header>
 
-  <nav>
+  <nav class="tabs">
     <button onclick="mostrar('inicio')">Inicio</button>
+    <button onclick="mostrar('buscar')">Buscar</button>
     <button onclick="mostrar('usuario')">Usuario</button>
-    <button onclick="mostrar('config')">Configuración</button>
+    <button onclick="mostrar('configuracion')">Configuración</button>
   </nav>
 
   <main>
-    <section id="inicio" class="panel"></section>
-    <section id="usuario" class="panel"></section>
-    <section id="config" class="panel"></section>
+    <section id="inicio" class="seccion activa"></section>
+    <section id="buscar" class="seccion"></section>
+    <section id="usuario" class="seccion"></section>
+    <section id="configuracion" class="seccion"></section>
   </main>
 
   <script src="scripts.js"></script>
@@ -32,5 +33,16 @@
       navigator.serviceWorker.register('service-worker.js');
     }
   </script>
+
+<div id="modalBienvenida" class="modal">
+  <div class="modal-content">
+    <h2>¡Bienvenido a PinkStream!</h2>
+    <p>¿Tienes una cuenta?</p>
+    <button onclick="modalAccion('iniciar')">Iniciar sesión</button>
+    <button onclick="modalAccion('registrar')">Registrarse</button>
+    <button onclick="modalAccion('invitar')">Quizás más tarde</button>
+  </div>
+</div>
 </body>
+
 </html>

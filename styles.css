@@ -1,67 +1,125 @@
+:root {
+  --main: #ff007a;
+  --bg: #111;
+  --text: #fff;
+  --accent: #ff66a3;
+}
 body {
   margin: 0;
-  font-family: sans-serif;
-  background: #111;
-  color: white;
-}
-body[data-theme='light'] {
-  background: #fff;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Segoe UI', sans-serif;
 }
 header {
-  background: #ff0066;
-  padding: 15px;
+  background: var(--main);
   text-align: center;
+  padding: 1rem;
 }
-nav {
+.tabs {
   display: flex;
   justify-content: space-around;
   background: #222;
-  padding: 10px;
 }
-nav button {
+.tabs button {
+  flex: 1;
+  padding: 1rem;
   background: none;
   border: none;
-  color: white;
+  color: var(--text);
   font-weight: bold;
   cursor: pointer;
 }
-main {
-  padding: 20px;
+.tabs button:hover {
+  background: var(--main);
+  color: #fff;
 }
-.panel {
+.seccion {
   display: none;
+  padding: 1.5rem;
 }
-.panel.active {
+.seccion.activa {
   display: block;
 }
-input, select, button, textarea {
-  margin: 10px 0;
-  padding: 8px;
-  width: 100%;
-  max-width: 500px;
+
+.usuario-header {
+  float: right;
+  font-size: 0.9em;
 }
-video {
-  width: 100%;
-  max-width: 600px;
-  margin-bottom: 10px;
-}
-button.like-btn, button.fav-btn {
-  background: none;
+.usuario-header button {
+  margin-left: 8px;
+  background: var(--accent);
   border: none;
+  padding: 5px 10px;
   color: white;
-  font-size: 1.5em;
+  border-radius: 4px;
   cursor: pointer;
 }
-button.liked, button.favorited {
-  color: #ff0066;
+.usuario-header button:hover {
+  background: #ff3385;
 }
-.comment-box {
-  margin-top: 10px;
+
+.post {
+  background: #222;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+}
+.post-media {
+  max-width: 100%;
+  margin-top: 0.5rem;
+}
+.comment-box input {
+  width: 70%;
+  margin-right: 0.5rem;
 }
 .comment {
   background: #333;
-  padding: 5px 10px;
-  border-radius: 5px;
   margin-top: 5px;
+  padding: 5px;
+  border-radius: 5px;
+}
+.like-btn.liked, .fav-btn.favorited {
+  color: var(--main);
+}
+
+.modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 999;
+}
+.modal-content {
+  background: #222;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 10px;
+}
+.modal-content button {
+  background: var(--main);
+  border: none;
+  margin: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  color: white;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.notificacion {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  background: var(--main);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  z-index: 999;
+  animation: aparecer 0.3s ease;
+}
+@keyframes aparecer {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }

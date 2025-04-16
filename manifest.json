@@ -1,0 +1,9 @@
+{
+  "name": "PinkStream",
+  "short_name": "PinkStream",
+  "start_url": "index.html",
+  "display": "standalone",
+  "theme_color": "#ff0066",
+  "background_color": "#111",
+  "icons": []
+}
