@@ -1,0 +1,67 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: #111;
+  color: white;
+}
+body[data-theme='light'] {
+  background: #fff;
+  color: #111;
+}
+header {
+  background: #ff0066;
+  padding: 15px;
+  text-align: center;
+}
+nav {
+  display: flex;
+  justify-content: space-around;
+  background: #222;
+  padding: 10px;
+}
+nav button {
+  background: none;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+main {
+  padding: 20px;
+}
+.panel {
+  display: none;
+}
+.panel.active {
+  display: block;
+}
+input, select, button, textarea {
+  margin: 10px 0;
+  padding: 8px;
+  width: 100%;
+  max-width: 500px;
+}
+video {
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 10px;
+}
+button.like-btn, button.fav-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+button.liked, button.favorited {
+  color: #ff0066;
+}
+.comment-box {
+  margin-top: 10px;
+}
+.comment {
+  background: #333;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-top: 5px;
+}

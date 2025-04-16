@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PinkStream</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
+  <meta name="theme-color" content="#ff0066"/>
+</head>
+<body data-theme="dark">
+  <header>
+    <h1>PinkStream</h1>
+    <div id="userDisplay"></div>
+  </header>
+
+  <nav>
+    <button onclick="mostrar('inicio')">Inicio</button>
+    <button onclick="mostrar('usuario')">Usuario</button>
+    <button onclick="mostrar('config')">Configuración</button>
+  </nav>
+
+  <main>
+    <section id="inicio" class="panel"></section>
+    <section id="usuario" class="panel"></section>
+    <section id="config" class="panel"></section>
+  </main>
+
+  <script src="scripts.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js');
+    }
+  </script>
+</body>
+</html>
